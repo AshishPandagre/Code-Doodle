@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+/*
+Only custom marker for summary/details
+For cross browser compatible styling hide Firefox's marker by setting summary { display: block }
+and Chrome and Safari's marker by setting ::-webkit-details-marker {display: none;}
+*/
+
+  .test {
+    background-color: cyan;
+  }
+
+  summary {
+    display: block;
+    cursor: pointer;
+    outline: 0;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .folder {
+    display: block;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .folder.is-expandable::before {
+    border-left: 1px solid #333;
+    content: "";
+    height: 100%;
+    left: 0.8rem;
+    position: absolute;
+    top: 2.4rem;
+    height: calc(100% - 2.4rem);
+  }
+
+  .folder .folder {
+    margin-left: 1.5rem;
+  }
+
+  .folder.is-expandable[open]>.folder-title::before {
+    content: url('./assets/folder_open.svg');
+  }
+
+  .folder.is-expandable>.folder-title {
+    padding-left: 1.5rem;
+  }
+
+  .folder.is-expandable>.folder-title::before {
+    position: absolute;
+    will-change: transform;
+    transition: transform 200ms ease;
+    content: url('./assets/folder_closed.svg');
+    top: 2px;
+    left: 0;
+    display: inline-block;
+    width: 1.1rem;
+    text-align: center;
+  }
+
+  .folder-title {
+    cursor: pointer;
+    display: block;
+    outline: 0;
+    color: #fff;
+    line-height: 1.8rem;
+  }
+
+  .folder-title .icon {
+    display: inline;
+    position: relative;
+  }
+
+  .folder-title .icon::before {
+    top: 0;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 1.6rem;
+    text-align: center;
+  }
+
+  .folder-title::-webkit-details-marker {
+    display: none;
+  }
+}
