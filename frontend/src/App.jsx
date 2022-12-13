@@ -9,9 +9,9 @@ import Output from './components/Test/Output'
 function App() {
 
   return (
-    <div className='bg-[#252525] h-screen flex flex-col'>
+    <div className='bg-[#252525] h-screen flex flex-col overflow-hidden'>
       <Header />
-      <ReflexContainer orientation='vertical' className='flex flex-1 overflow-auto'>
+      <ReflexContainer orientation='vertical' className='flex flex-1 overflow-auto overflow-hidden'>
 
         <ReflexElement className='min-w-0' flex={0.2} minSize={64}> <Sidebar /> </ReflexElement>
 
