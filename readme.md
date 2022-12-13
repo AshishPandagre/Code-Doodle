@@ -23,7 +23,7 @@ List the ready features here:
 ## Usage
 Install dependencies for backend and frontend separately. <br>
 Then, run the backend and frontend individually. <br>
-Change the name of `.env.example` to `.env` in backend.
+Change the name of `.env.example` to `.env` in backend. <br>
 Backend : `node server.js` <br>
 Frontend: `npm run dev`
 
